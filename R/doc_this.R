@@ -1,16 +1,28 @@
 #' Document this object
 #'
-#' This RStudio addin  takes \code{obj} (either an R function or an R
+#' This RStudio addin takes the name of an object (either an R function or an R
 #' data.frame), and replaces it with some skeleton roxygen2 documentation.
 #'
+#' For functions, empty \code{@param}s are generated from the function's arguments, while for dataframes a full \code{\\description} block is generated from column names
+#'
+#' @note The object must be available within the evaulation environment.
+#'
+#' @param obj Either an R function or data.frame (the addin gets this object
+#'   from the selected text, which is itself passed to \code{text}.)
+#' @name doc_this
+NULL
+
+#' @rdname doc_this
 #' @export
 doc_this_addin <- function() {
   context <- rstudioapi::getActiveDocumentContext()
   text <- context$selection[[1]]$text
-  rstudioapi::insertText(text = doc_this(obj = get(text), label = text))
+  rstudioapi::insertText(text = doc_this(obj = get(text)))
 }
-
-doc_this <- function(obj, label) {
+#' @rdname doc_this
+#' @export
+doc_this <- function(obj) {
+  label <- deparse(substitute(obj))
   if(is.function(obj)) {
     doc_function(obj, label)
   } else if(is.data.frame(obj)) {
@@ -20,6 +32,8 @@ doc_this <- function(obj, label) {
   }
 }
 
+#' @rdname doc_this
+#' @export
 doc_data <- function(obj, label) {
   # Get column names and types
   vartype <- vapply(obj, typeof, FUN.VALUE = character(1))
