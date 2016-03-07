@@ -44,7 +44,6 @@ doc_this_addin <- function() {
 #' #' @return RETURN DESCRIPTION
 #' #' @examples
 #' #' ADD EXAMPLES HERE
-#' #' lm
 #'
 #' doc_this(iris)
 #' #' DATASET TITLE
@@ -59,7 +58,6 @@ doc_this_addin <- function() {
 #' #'   \item{\code{Petal.Width}}{double. DESCRIPTION.}
 #' #'   \item{\code{Species}}{integer. DESCRIPTION.}
 #' #' }
-#' #' "iris"
 #'
 #' @export
 doc_this <- function(obj) {
