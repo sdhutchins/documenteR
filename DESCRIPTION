@@ -11,3 +11,5 @@ LazyData: TRUE
 RoxygenNote: 5.0.1
 Imports: rstudioapi
 Suggests: testthat
+URL: https://github.com/mdlincoln/docthis
+BugReports: https://github.com/mdlincoln/docthis/issues
