@@ -31,7 +31,7 @@ doc_data <- function(obj, label) {
   paste0("
 #\' DATASET TITLE
 #\'
-#\' DATASET DETAILS
+#\' DATASET DESCRIPTION
 #\'
 #\' @format A data frame with ", nrow(obj), " rows and ", length(vartype), " variables:
 #\' \\describe{
