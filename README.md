@@ -40,7 +40,7 @@ Say you've written a function (let's call it `lm`!) but haven't put together you
 lm <- function(.....
 ```
 
-This will also work for data.frames, which you _should_ be thoroughly documenting in `R/data.r`.
+This will also work for data.frames, which you _should_ be thoroughly documenting in `R/data.R`.
 Again, make sure the data.frame is available in the current environment, highlight its name, and call the addin:
 
 ```r
