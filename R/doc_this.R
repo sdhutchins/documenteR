@@ -7,12 +7,11 @@
 #'
 #' @note The object must be available within the evaulation environment.
 #'
-#' @param obj Either an R function or data.frame (the addin gets this object
-#'   from the selected text, which is itself passed to \code{text}.)
+#' @param objname A character string naming an R function or data.frame.
 #' @name doc_this
 #'
 #' @examples
-#' doc_this(lm)
+#' doc_this("lm")
 #' #' FUNCTION TITLE
 #' #'
 #' #' FUNCTION DESCRIPTION
@@ -36,7 +35,7 @@
 #' #' @examples
 #' #' ADD EXAMPLES HERE
 #'
-#' doc_this(iris)
+#' doc_this("iris")
 #' #' DATASET TITLE
 #' #'
 #' #' DATASET DESCRIPTION
@@ -55,20 +54,20 @@ NULL
 #' @export
 doc_this_addin <- function() {
   context <- rstudioapi::getActiveDocumentContext()
-  text <- context$selection[[1]]$text
-  rstudioapi::insertText(text = doc_this(obj = get(text)))
+  objname <- context$selection[[1]]$text
+  rstudioapi::insertText(text = doc_this(objname))
 }
 
 #' @rdname doc_this
 #' @export
-doc_this <- function(obj) {
-  label <- deparse(substitute(obj))
+doc_this <- function(objname) {
+  obj <- get(objname)
   if(is.function(obj)) {
-    doc_function(obj, label)
+    doc_function(obj, objname)
   } else if(is.data.frame(obj)) {
-    doc_data(obj = obj, label = label)
+    doc_data(obj = obj, label = objname)
   } else {
-    stop(label, " is a ", class(obj), ". doc_this_addin currently supports only functions and data.frames")
+    stop(objname, " is a ", class(obj), ". doc_this_addin currently supports only functions and data.frames")
   }
 }
 

@@ -5,11 +5,11 @@ iris_docs <- "\n#' DATASET TITLE\n#'\n#' DATASET DESCRIPTION\n#'\n#' @format A d
 lm_docs <- "\n#' FUNCTION TITLE\n#'\n#' FUNCTION DESCRIPTION\n#'\n#' @param formula DESCRIPTION.\n#' @param data DESCRIPTION.\n#' @param subset DESCRIPTION.\n#' @param weights DESCRIPTION.\n#' @param na.action DESCRIPTION.\n#' @param method DESCRIPTION.\n#' @param model DESCRIPTION.\n#' @param x DESCRIPTION.\n#' @param y DESCRIPTION.\n#' @param qr DESCRIPTION.\n#' @param singular.ok DESCRIPTION.\n#' @param contrasts DESCRIPTION.\n#' @param offset DESCRIPTION.\n#' @param ... DESCRIPTION.\n#'\n#' @return RETURN DESCRIPTION\n#' @examples\n#' ADD EXAMPLES HERE\nlm"
 
 test_that("object documentation is properly formatted", {
-  expect_equivalent(doc_this(iris), iris_docs)
-  expect_equivalent(doc_this(lm), lm_docs)
+  expect_equivalent(doc_this("iris"), iris_docs)
+  expect_equivalent(doc_this("lm"), lm_docs)
 })
 
 test_that("missing or invalid objects return an error", {
-  expect_error(doc_this(x), regexp = "x")
-  expect_error(doc_this(month.name), regexp = "character")
+  expect_error(doc_this("x"), regexp = "x")
+  expect_error(doc_this("month.name"), regexp = "character")
 })
