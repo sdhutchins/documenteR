@@ -25,7 +25,7 @@ doc_data <- function(obj, label) {
   vartype <- vapply(obj, typeof, FUN.VALUE = character(1))
 
   # Write individual item description templates
-  items <- paste0("#\'   \\item{\\code{", names(vartype), "}}{", vartype, ". ###}", collapse = "\n")
+  items <- paste0("#\'   \\item{\\code{", names(vartype), "}}{", vartype, ". DESCRIPTION.}", collapse = "\n")
 
   # Return the full documentation template
   paste0("
