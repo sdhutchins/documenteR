@@ -20,6 +20,47 @@ doc_this_addin <- function() {
   rstudioapi::insertText(text = doc_this(obj = get(text)))
 }
 #' @rdname doc_this
+#' @examples
+#' doc_this(lm)
+#' #' FUNCTION TITLE
+#' #'
+#' #' FUNCTION DESCRIPTION
+#' #'
+#' #' @param formula DESCRIPTION.
+#' #' @param data DESCRIPTION.
+#' #' @param subset DESCRIPTION.
+#' #' @param weights DESCRIPTION.
+#' #' @param na.action DESCRIPTION.
+#' #' @param method DESCRIPTION.
+#' #' @param model DESCRIPTION.
+#' #' @param x DESCRIPTION.
+#' #' @param y DESCRIPTION.
+#' #' @param qr DESCRIPTION.
+#' #' @param singular.ok DESCRIPTION.
+#' #' @param contrasts DESCRIPTION.
+#' #' @param offset DESCRIPTION.
+#' #' @param ... DESCRIPTION.
+#' #'
+#' #' @return RETURN DESCRIPTION
+#' #' @examples
+#' #' ADD EXAMPLES HERE
+#' #' lm
+#'
+#' doc_this(iris)
+#' #' DATASET TITLE
+#' #'
+#' #' DATASET DESCRIPTION
+#' #'
+#' #' @format A data frame with 150 rows and 5 variables:
+#' #' \describe{
+#' #'   \item{\code{Sepal.Length}}{double. DESCRIPTION.}
+#' #'   \item{\code{Sepal.Width}}{double. DESCRIPTION.}
+#' #'   \item{\code{Petal.Length}}{double. DESCRIPTION.}
+#' #'   \item{\code{Petal.Width}}{double. DESCRIPTION.}
+#' #'   \item{\code{Species}}{integer. DESCRIPTION.}
+#' #' }
+#' #' "iris"
+#'
 #' @export
 doc_this <- function(obj) {
   label <- deparse(substitute(obj))
