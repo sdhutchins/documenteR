@@ -10,16 +10,7 @@
 #' @param obj Either an R function or data.frame (the addin gets this object
 #'   from the selected text, which is itself passed to \code{text}.)
 #' @name doc_this
-NULL
-
-#' @rdname doc_this
-#' @export
-doc_this_addin <- function() {
-  context <- rstudioapi::getActiveDocumentContext()
-  text <- context$selection[[1]]$text
-  rstudioapi::insertText(text = doc_this(obj = get(text)))
-}
-#' @rdname doc_this
+#'
 #' @examples
 #' doc_this(lm)
 #' #' FUNCTION TITLE
@@ -58,7 +49,17 @@ doc_this_addin <- function() {
 #' #'   \item{\code{Petal.Width}}{double. DESCRIPTION.}
 #' #'   \item{\code{Species}}{integer. DESCRIPTION.}
 #' #' }
-#'
+NULL
+
+#' @rdname doc_this
+#' @export
+doc_this_addin <- function() {
+  context <- rstudioapi::getActiveDocumentContext()
+  text <- context$selection[[1]]$text
+  rstudioapi::insertText(text = doc_this(obj = get(text)))
+}
+
+#' @rdname doc_this
 #' @export
 doc_this <- function(obj) {
   label <- deparse(substitute(obj))
@@ -71,8 +72,6 @@ doc_this <- function(obj) {
   }
 }
 
-#' @rdname doc_this
-#' @export
 doc_data <- function(obj, label) {
   # Get column names and types
   vartype <- vapply(obj, typeof, FUN.VALUE = character(1))
