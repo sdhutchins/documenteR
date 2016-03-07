@@ -4,13 +4,15 @@ An RStudio addin that builds the skeleton of documentation for an R function or 
 
 ## Installation
 
+You will need to be running [RStudio v0.99.878 or later](https://www.rstudio.com/products/rstudio/download/preview/).
+
 ```r
 devtools::install_github("mdlincoln/docthisaddin")
 ```
 
 ## Usage
 
-Say you've written a function (let's call it `lm`) but haven't put together your documentation quite yet. Load the function into the current environment, select the function tile, and call the "Document object" addin, which will paste in some skeleton roxygen2 documentation above your function definition:
+Say you've written a function (let's call it `lm`!) but haven't put together your documentation quite yet. Load the function into the current environment, select the function tile, and call the "Document object" addin, which will paste in some skeleton roxygen2 documentation above your function definition:
 
 ```r
 #' FUNCTION TITLE
@@ -38,7 +40,8 @@ Say you've written a function (let's call it `lm`) but haven't put together your
 lm <- function(.....
 ```
 
-This will also work for data.frames. Again, make sure the data.frame is available in the current environment, highlight its name, and call the addin:
+This will also work for data.frames, which you _should_ be thoroughly documenting in `R/data.r`.
+Again, make sure the data.frame is available in the current environment, highlight its name, and call the addin:
 
 ```r
 #' DATASET TITLE
