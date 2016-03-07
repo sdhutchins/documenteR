@@ -1,0 +1,4 @@
+Name: Doc This
+Description: Inserts roxygen2 documentation skeleton for functions and data.frames
+Binding: doc_this_addin
+Interactive: false
