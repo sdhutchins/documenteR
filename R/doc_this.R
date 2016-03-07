@@ -12,7 +12,7 @@ doc_this_addin <- function() {
 
 doc_this <- function(obj, label) {
   if(is.function(obj)) {
-    stop("Not yet implemented.")
+    doc_function(obj, label)
   } else if(is.data.frame(obj)) {
     doc_data(obj = obj, label = label)
   } else {
@@ -38,4 +38,27 @@ doc_data <- function(obj, label) {
 ", items, "
 #\' }
 \"", label, "\"")
+}
+
+doc_function <- function(obj, label) {
+  # Get the function arguments
+  arglist <- formals(obj)
+  argnames <- names(arglist)
+
+  # Write individual parameter description templates
+  params <- paste0("#\' @param ", argnames, " DESCRIPTION.", collapse = "\n")
+
+
+  # Return the full documentation template
+  paste0("
+#\' FUNCTION TITLE
+#\'
+#\' FUNCTION DESCRIPTION
+#\'
+", params, "
+#\'
+#\' @return RETURN DESCRIPTION
+#\' @examples
+#\' ADD EXAMPLES HERE
+", label)
 }
