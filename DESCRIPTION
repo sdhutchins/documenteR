@@ -1,4 +1,4 @@
-Package: docthisaddin
+Package: docthis
 Type: Package
 Title: RStudio Addin to Ease Writing Documentation
 Authors@R: person("Matthew", "Lincoln", email = "matthew.d.lincoln@gmail.com",

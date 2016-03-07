@@ -1,4 +1,4 @@
-# Doucment this [object]
+# docthis: Doucment this [object]
 
 An RStudio addin that builds the skeleton of documentation for an R function or dataframe using the roxygen2 syntax.
 
@@ -7,7 +7,7 @@ An RStudio addin that builds the skeleton of documentation for an R function or 
 You will need to be running [RStudio v0.99.878 or later](https://www.rstudio.com/products/rstudio/download/preview/).
 
 ```r
-devtools::install_github("mdlincoln/docthisaddin")
+devtools::install_github("mdlincoln/docthis")
 ```
 
 ## Usage

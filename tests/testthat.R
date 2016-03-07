@@ -1,4 +1,4 @@
 library(testthat)
-library(docthisaddin)
+library(docthis)
 
-test_check("docthisaddin")
+test_check("docthis")
