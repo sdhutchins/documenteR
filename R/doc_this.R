@@ -54,7 +54,7 @@ NULL
 #' @export
 doc_this_addin <- function() {
   context <- rstudioapi::getActiveDocumentContext()
-  objname <- context$selection[[1]]$text
+  objname <- strpquotes(context$selection[[1]]$text)
   rstudioapi::insertText(text = doc_this(objname))
 }
 
@@ -69,6 +69,10 @@ doc_this <- function(objname) {
   } else {
     stop(objname, " is a ", class(obj), ". doc_this_addin currently supports only functions and data.frames")
   }
+}
+
+strpquotes <- function(t) {
+  gsub("[\"']", "", t)
 }
 
 doc_data <- function(obj, label) {
