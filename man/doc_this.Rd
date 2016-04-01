@@ -45,7 +45,7 @@ doc_this("lm")
 #'
 #' @return RETURN DESCRIPTION
 #' @examples
-#' ADD EXAMPLES HERE
+#' # ADD EXAMPLES HERE
 
 doc_this("iris")
 #' DATASET TITLE
