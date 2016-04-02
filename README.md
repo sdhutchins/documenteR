@@ -36,7 +36,7 @@ Say you've written a function (let's call it `lm`!) but haven't put together you
 #'
 #' @return RETURN DESCRIPTION
 #' @examples
-#' ADD EXAMPLES HERE
+#' # ADD EXAMPLES HERE
 lm <- function(.....
 ```
 
