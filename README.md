@@ -1,4 +1,4 @@
-# docthis: Doucment this [object]
+# docthis: Document this [object]
 
 An RStudio addin that builds the skeleton of documentation for an R function or dataframe using the roxygen2 syntax.
 
