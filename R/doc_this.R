@@ -12,9 +12,9 @@
 #'
 #' @examples
 #' doc_this("lm")
-#' #' FUNCTION TITLE
+#' #' FUNCTION_TITLE
 #' #'
-#' #' FUNCTION DESCRIPTION
+#' #' FUNCTION_DESCRIPTION
 #' #'
 #' #' @param formula DESCRIPTION.
 #' #' @param data DESCRIPTION.
@@ -84,9 +84,9 @@ doc_data <- function(obj, label) {
 
   # Return the full documentation template
   paste0("
-#\' DATASET TITLE
+#\' DATASET_TITLE
 #\'
-#\' DATASET DESCRIPTION
+#\' DATASET_DESCRIPTION
 #\'
 #\' @format A data frame with ", nrow(obj), " rows and ", length(vartype), " variables:
 #\' \\describe{
@@ -106,14 +106,14 @@ doc_function <- function(obj, label) {
 
   # Return the full documentation template
   paste0("
-#\' FUNCTION TITLE
+#\' FUNCTION_TITLE
 #\'
-#\' FUNCTION DESCRIPTION
+#\' FUNCTION_DESCRIPTION
 #\'
 ", params, "
 #\'
-#\' @return RETURN DESCRIPTION
+#\' @return RETURN_DESCRIPTION
 #\' @examples
-#\' # ADD EXAMPLES HERE
+#\' # ADD_EXAMPLES_HERE
 ", label)
 }
