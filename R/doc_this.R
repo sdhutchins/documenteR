@@ -106,9 +106,9 @@ doc_function <- function(obj, label) {
 
   # Return the full documentation template
   paste0("
-#\' FUNCTION_TITLE
+#\' @title FUNCTION_TITLE
 #\'
-#\' FUNCTION_DESCRIPTION
+#\' @description FUNCTION_DESCRIPTION
 #\'
 ", params, "
 #\'
