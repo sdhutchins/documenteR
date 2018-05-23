@@ -2,12 +2,14 @@
 
 An RStudio addin that builds the skeleton of documentation for an R function or dataframe using the roxygen2 syntax.
 
+This addin has been slightly modified from @mdlincoln's [docthis](https://github.com/mdlincoln/docthis).
+
 ## Installation
 
 You will need to be running [RStudio v0.99.878 or later](https://www.rstudio.com/products/rstudio/download/preview/).
 
 ```r
-devtools::install_github("mdlincoln/docthis")
+devtools::install_github("sdhutchins/docthis")
 ```
 
 ## Usage
@@ -15,9 +17,9 @@ devtools::install_github("mdlincoln/docthis")
 Say you've written a function (let's call it `lm`!) but haven't put together your documentation quite yet. Load the function into the current environment, select the function tile, and call the "Document object" addin, which will paste in some skeleton roxygen2 documentation above your function definition:
 
 ```r
-#' FUNCTION TITLE
+#' @title FUNCTION TITLE
 #'
-#' FUNCTION DESCRIPTION
+#' @description FUNCTION DESCRIPTION
 #'
 #' @param formula DESCRIPTION.
 #' @param data DESCRIPTION.
