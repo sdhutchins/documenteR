@@ -113,7 +113,6 @@ doc_function <- function(obj, label) {
 ", params, "
 #\'
 #\' @return RETURN_DESCRIPTION
-#\' @examples
-#\' # ADD_EXAMPLES_HERE
+#\' @export
 ", label)
 }
