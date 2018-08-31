@@ -1,4 +1,4 @@
-# docthis: Document this [object]
+# documenteR: Document an object!
 
 An RStudio addin that builds the skeleton of documentation for an R function or dataframe using the roxygen2 syntax.
 
@@ -6,10 +6,9 @@ This addin has been slightly modified from @mdlincoln's [docthis](https://github
 
 ## Installation
 
-You will need to be running [RStudio v0.99.878 or later](https://www.rstudio.com/products/rstudio/download/preview/).
 
 ```r
-devtools::install_github("sdhutchins/docthis")
+devtools::install_github("sdhutchins/documenteR")
 ```
 
 ## Usage
@@ -60,6 +59,3 @@ Again, make sure the data.frame is available in the current environment, highlig
 #' }
 "iris"
 ```
-
----
-[Matthew Lincoln](http://matthewlincoln.net)
