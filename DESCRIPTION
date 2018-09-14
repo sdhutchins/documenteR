@@ -1,17 +1,17 @@
-Package: docthis
+Package: documenteR
 Type: Package
-Title: RStudio Addin to Ease Writing Documentation
-Authors@R: person("Matthew", "Lincoln", email = "matthew.d.lincoln@gmail.com",
+Title: RStudio Addin to Standardize Writing Documentation
+Authors@R: person("Shaurita", "Hutchins", email = "sdhutchins@outlook.com",
     role = c("aut", "cre"))
-Version: 0.1.1
+Version: 0.1
 Description: An RStudio addin that builds the skeleton of documentation for an R
     function or dataframe using the roxygen2 syntax.
 License: MIT + file LICENSE
 LazyData: TRUE
-RoxygenNote: 5.0.1.9000
+RoxygenNote: 6.1.0
 Imports:
     rstudioapi
 Suggests:
     testthat
-URL: https://github.com/mdlincoln/docthis
-BugReports: https://github.com/mdlincoln/docthis/issues
+URL: https://github.com/sdhutchins/documenteR
+BugReports: https://github.com/sdhutchins/documenteR/issues
