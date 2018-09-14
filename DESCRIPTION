@@ -12,6 +12,7 @@ RoxygenNote: 6.1.0
 Imports:
     rstudioapi
 Suggests:
-    testthat
+    testthat,
+    covr
 URL: https://github.com/sdhutchins/documenteR
 BugReports: https://github.com/sdhutchins/documenteR/issues

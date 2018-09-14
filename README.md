@@ -1,4 +1,5 @@
 [![Travis build status](https://travis-ci.org/sdhutchins/documenteR.svg?branch=master)](https://travis-ci.org/sdhutchins/documenteR)
+[![Coverage status](https://codecov.io/gh/sdhutchins/documenteR/branch/master/graph/badge.svg)](https://codecov.io/github/sdhutchins/documenteR?branch=master)
 
 # documenteR
 
