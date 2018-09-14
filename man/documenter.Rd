@@ -20,7 +20,7 @@ For \strong{functions}, an empty \code{@param} is generated for each of the func
 For \strong{dataframes}, a full \code{\\description} block is generated from column names
 }
 \note{
-The object \strong{must} be available within the evaulation environment.
+The addin will automatically source the file that the function or data is in.
 }
 \examples{
 documenter("lm")

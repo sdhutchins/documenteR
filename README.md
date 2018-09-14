@@ -15,7 +15,7 @@ devtools::install_github("sdhutchins/documenteR")
 
 ## Examples
 
-Say you've written a function (let's call it `lm`!) but haven't put together your documentation quite yet. Load the function into the current environment, select the function tile, and call the "Document object" addin, which will paste in some skeleton roxygen2 documentation above your function definition:
+IF you've witten a function but haven't created documentation for it, select the function tile, and call the "Document an object" addin, which will paste in skeleton roxygen2 documentation above your function definition:
 
 ### Document a function
 
@@ -45,8 +45,8 @@ Say you've written a function (let's call it `lm`!) but haven't put together you
 
 ### Document a dataframe
 
-This will also work for data.frames, which you _should_ be thoroughly documenting in `R/data.R`.
-Again, make sure the data.frame is available in the current environment, highlight its name, and call the addin:
+This will also work for a `data.frame`, which you _should_ be thoroughly documenting in `R/data.R`.
+Highlight the name of your `data.frame` and call the addin.
 
 ```r
 #' DATASET_TITLE
