@@ -6,7 +6,7 @@
 #' For \strong{functions}, an empty \code{@param} is generated for each of the funciton's arguments.
 #' For \strong{dataframes}, a full \code{\\description} block is generated from column names
 #'
-#' @note The object \strong{must} be available within the evaulation environment.
+#' @note The addin will automatically source the file that the function or data is in.
 #'
 #' @param objname A character string naming an R function or data.frame.
 #'
@@ -65,6 +65,8 @@ documenter <- function(objname) {
 #' @export
 documenter_addin <- function() {
   context <- rstudioapi::getActiveDocumentContext()
+  # Source the file.
+  source(context$path)
   objname <- strpquotes(context$selection[[1]]$text)
   rstudioapi::insertText(text = documenter(objname))
 }
