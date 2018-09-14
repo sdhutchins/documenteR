@@ -1,4 +1,4 @@
 library(testthat)
-library(docthis)
+library(documenteR)
 
-test_check("docthis")
+test_check("documenteR")
