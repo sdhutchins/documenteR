@@ -1,20 +1,20 @@
-#' Document this object
+#' @title Document an R object
 #'
-#' This RStudio addin takes the name of an object (either an R function or an R
-#' data.frame), and replaces it with some skeleton roxygen2 documentation.
+#' @description This function takes the name of an object (either an R function or an R
+#' data.frame) and replaces it with skeleton roxygen2 documentation. It is used in the \code{documenter_addin()} function which is the installed R addin.
 #'
-#' For functions, empty \code{@param}s are generated from the function's arguments, while for dataframes a full \code{\\description} block is generated from column names
+#' For \strong{functions}, an empty \code{@param} is generated for each of the funciton's arguments.
+#' For \strong{dataframes}, a full \code{\\description} block is generated from column names
 #'
-#' @note The object must be available within the evaulation environment.
+#' @note The object \strong{must} be available within the evaulation environment.
 #'
 #' @param objname A character string naming an R function or data.frame.
-#' @name doc_this
 #'
 #' @examples
-#' doc_this("lm")
-#' #' FUNCTION_TITLE
+#' documenter("lm")
+#' #' @title FUNCTION_TITLE
 #' #'
-#' #' FUNCTION_DESCRIPTION
+#' #' @description FUNCTION_DESCRIPTION
 #' #'
 #' #' @param formula DESCRIPTION.
 #' #' @param data DESCRIPTION.
@@ -32,13 +32,12 @@
 #' #' @param ... DESCRIPTION.
 #' #'
 #' #' @return RETURN DESCRIPTION
-#' #' @examples
-#' #' # ADD EXAMPLES HERE
+#' #' @export
 #'
-#' doc_this("iris")
-#' #' DATASET TITLE
+#' documenter("iris")
+#' #' DATASET_TITLE
 #' #'
-#' #' DATASET DESCRIPTION
+#' #' DATASET_DESCRIPTION
 #' #'
 #' #' @format A data frame with 150 rows and 5 variables:
 #' #' \describe{
@@ -48,34 +47,33 @@
 #' #'   \item{\code{Petal.Width}}{double. DESCRIPTION.}
 #' #'   \item{\code{Species}}{integer. DESCRIPTION.}
 #' #' }
-NULL
-
-#' @rdname doc_this
+#'
 #' @export
-doc_this_addin <- function() {
-  context <- rstudioapi::getActiveDocumentContext()
-  objname <- strpquotes(context$selection[[1]]$text)
-  rstudioapi::insertText(text = doc_this(objname))
+documenter <- function(objname) {
+  obj <- get(objname)
+  if (is.function(obj)) {
+    document_function(obj, label = objname)
+  } else if (is.data.frame(obj)) {
+    document_data(obj = obj, label = objname)
+  } else {
+    stop(objname, " is a ", class(obj), ". documenter_addin currently supports only functions and data.frames.")
+  }
 }
 
-#' @rdname doc_this
+#' @rdname documenter
+#'
 #' @export
-doc_this <- function(objname) {
-  obj <- get(objname)
-  if(is.function(obj)) {
-    doc_function(obj, objname)
-  } else if(is.data.frame(obj)) {
-    doc_data(obj = obj, label = objname)
-  } else {
-    stop(objname, " is a ", class(obj), ". doc_this_addin currently supports only functions and data.frames")
-  }
+documenter_addin <- function() {
+  context <- rstudioapi::getActiveDocumentContext()
+  objname <- strpquotes(context$selection[[1]]$text)
+  rstudioapi::insertText(text = documenter(objname))
 }
 
 strpquotes <- function(t) {
   gsub("[\"']", "", t)
 }
 
-doc_data <- function(obj, label) {
+document_data <- function(obj, label) {
   # Get column names and types
   vartype <- vapply(obj, typeof, FUN.VALUE = character(1))
 
@@ -95,7 +93,7 @@ doc_data <- function(obj, label) {
 \"", label, "\"")
 }
 
-doc_function <- function(obj, label) {
+document_function <- function(obj, label) {
   # Get the function arguments
   arglist <- formals(obj)
   argnames <- names(arglist)
