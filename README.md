@@ -5,7 +5,7 @@
 
 An RStudio addin that builds the skeleton of documentation for an R function or dataframe using roxygen2 syntax.
 
-This addin has been modified from @mdlincoln's [docthis](https://github.com/mdlincoln/docthis) to fit more with Hadley's [notes on documenting R packages](http://r-pkgs.had.co.nz/man.html).
+This addin has been modified from [@mdlincoln](https://github.com/mdlincoln)'s [docthis](https://github.com/mdlincoln/docthis) to fit more with Hadley's [notes on documenting R packages](http://r-pkgs.had.co.nz/man.html).
 
 
 ## Installation
