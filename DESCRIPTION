@@ -16,3 +16,4 @@ Suggests:
     covr
 URL: https://github.com/sdhutchins/documenteR
 BugReports: https://github.com/sdhutchins/documenteR/issues
+Encoding: UTF-8
