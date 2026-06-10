@@ -1,0 +1,59 @@
+---
+title: "Get Started"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Get Started}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+`documenteR` helps you draft roxygen2 documentation for functions and data frames.
+You can use it from the RStudio addin or call `documenter()` directly.
+
+## Install
+
+```r
+install.packages(
+  "documenteR",
+  repos = c("https://sdhutchins.r-universe.dev", "https://cloud.r-project.org")
+)
+```
+
+## Using the Addin Manually
+
+Open a script that defines a function or data frame, highlight the object name,
+and run the "Document an object" addin.
+
+The addin sources the current file, finds the selected object, 
+and inserts a roxygen2 skeleton above it.
+
+## Using the Addin Programmatically
+
+You can also generate the documentation template directly from the console.
+
+```{r}
+documenteR::documenter("lm")
+```
+
+That returns a roxygen2 skeleton with one `@param` line for each function
+argument.
+
+## Example: document a data frame
+
+For data frames, `documenteR` creates a `@format` block with one entry per
+column.
+
+```{r}
+documenteR::documenter("iris")
+```
+
+Column types are labeled with data-aware names where possible. For example,
+factors stay `factor` instead of falling back to their underlying integer
+storage mode.

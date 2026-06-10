@@ -1,0 +1,79 @@
+meta:
+  name: documenteR
+  link:
+    home: https://www.shauritahutchins.com/
+    docs: https://sdhutchins.github.io/documenteR/
+    github: https://github.com/sdhutchins/documenteR
+    description: |
+      documenteR is an R package and RStudio addin for generating skeleton
+      roxygen2 documentation for functions and data frames.
+color:
+  primary: baltic-blue
+  foreground: charcoal-gray
+  background: soft-cream
+  secondary: midnight-violet
+  tertiary: cool-steel
+  info: dusty-mauve
+  success: dusty-mauve
+  warning: old-rose
+  danger: midnight-violet
+
+  palette:
+    baltic-blue: "#2A5678"
+    cool-steel: "#9FB1BF"
+    midnight-violet: "#30011E"
+    dusty-mauve: "#A07178"
+    old-rose: "#D17B88"
+    magenta-haze: "#30011E"
+    fairy-tale: "#D17B88"
+    puce: "#D17B88"
+    rosy-amethyst: "#A07178"
+    berkeley-blue: "#2A5678"
+    hover-strong: "#30011E"
+    dusty-rose: "#D17B88"
+    soft-ivory: "#F3ECE8"
+    soft-cream: "#FBF8F6"
+    charcoal-gray: "#222A31"
+    soft-blue: "#9FB1BF"
+    dusty-sky: "#9FB1BF"
+    gamma: "#616B76"
+    lightgray: "#7A838C"
+    delta: "#A07178"
+    epsilon: "#F1EBE7"
+    white: "#FFFFFF"
+
+typography:
+  fonts:
+  - family: IBM Plex Sans
+    source: google
+    weight: [400, 600, 700]
+  - family: Outfit
+    source: google
+    weight: [400, 500, 700]
+  - family: Source Code Pro
+    source: google
+    weight: [400, 500, 600]
+
+  base: IBM Plex Sans
+  headings:
+    family: Outfit
+    weight: 600
+    color: primary
+  monospace: Source Code Pro
+  link:
+    color: primary
+    decoration: underline
+
+defaults:
+  bootstrap:
+    defaults:
+      navbar-bg: "#2A5678"
+      navbar-fg: "#FFFFFF"
+      navbar-hover-color: "#D17B88"
+      body-bg: "#FFFFFF"
+      body-color: "#222A31"
+      link-color: "#2A5678"
+      link-hover-color: "#D17B88"
+      border-color: "#9FB1BF"
+      primary: "#2A5678"
+      secondary: "#30011E"

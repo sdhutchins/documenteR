@@ -1,3 +1,49 @@
+url: https://sdhutchins.github.io/documenteR/
+navbar:
+  bg: primary
+  type: dark
+  structure:
+    left: [intro, articles, reference]
+    right: [search, github]
+  components:
+    github:
+      icon: fa-github
+      href: https://github.com/sdhutchins/documenteR
+      aria-label: GitHub
+
+home:
+  title: documenteR
+  description: Build skeleton roxygen2 documentation for functions and data frames from the RStudio addin.
+  links:
+  - text: CI builds
+    href: https://github.com/sdhutchins/documenteR/actions
+  - text: Get started
+    href: articles/get-started.html
+  - text: Reference index
+    href: reference/index.html
+  - text: Report an issue
+    href: https://github.com/sdhutchins/documenteR/issues
+  sidebar:
+    structure: [links, license, citation, authors, dev]
+
+reference:
+- title: Addin functions
+  contents:
+  - documenter
+  - documenter_addin
+
+articles:
+- title: Get started
+  navbar: ~
+  contents:
+  - get-started
+
+footer:
+  structure:
+    left: developed_by
+    right: built_with
+
 template:
-  params:
-    bootswatch: simplex
+  bslib:
+    version: 5
+    brand: _brand.yml
