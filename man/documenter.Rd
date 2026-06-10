@@ -5,12 +5,15 @@
 \alias{documenter_addin}
 \title{Document an R object}
 \usage{
-documenter(objname)
+documenter(objname, envir = NULL)
 
 documenter_addin()
 }
 \arguments{
 \item{objname}{A character string naming an R function or data.frame.}
+
+\item{envir}{An optional environment used to resolve \code{objname}. When
+supplied, documenteR looks only in that environment.}
 }
 \description{
 This function takes the name of an object (either an R function or an R
@@ -52,12 +55,12 @@ documenter("iris")
 #' DATASET_DESCRIPTION
 #'
 #' @format A data frame with 150 rows and 5 variables:
-#' \\describe{
-#'   \\item{\\code{Sepal.Length}}{double. DESCRIPTION.}
-#'   \\item{\\code{Sepal.Width}}{double. DESCRIPTION.}
-#'   \\item{\\code{Petal.Length}}{double. DESCRIPTION.}
-#'   \\item{\\code{Petal.Width}}{double. DESCRIPTION.}
-#'   \\item{\\code{Species}}{integer. DESCRIPTION.}
+#' \describe{
+#'   \item{\code{Sepal.Length}}{double. DESCRIPTION.}
+#'   \item{\code{Sepal.Width}}{double. DESCRIPTION.}
+#'   \item{\code{Petal.Length}}{double. DESCRIPTION.}
+#'   \item{\code{Petal.Width}}{double. DESCRIPTION.}
+#'   \item{\code{Species}}{factor. DESCRIPTION.}
 #' }
 
 }
